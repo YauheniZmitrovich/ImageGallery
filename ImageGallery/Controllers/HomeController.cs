@@ -12,6 +12,11 @@ namespace ImageGallery.Controllers
         {
             return View();
         }
+        
+         public FileResult GetImage(string imagePath)
+        {
+            return File(Server.MapPath( "~/App_Data/Images/" + path), "image/png");
+        }
 
         public ActionResult About()
         {
