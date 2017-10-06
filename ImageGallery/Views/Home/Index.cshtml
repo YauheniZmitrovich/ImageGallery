@@ -1,23 +1,25 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<img  class="img-circle" src="~/App_Data/page1.png"/>
+
 <div id="my-carousel" class="carousel" data-ride="carousel">
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img src="../../App_Data/page1.png" />
+            <img src="@Url.Action("GetCarouselImage", new {imagePath = "Carousel/page1.png"})" style="width:1920px;height:500px;" />
             <div class="carousel-caption">
                 <h3>Caption heading 1</h3>
             </div>
         </div>
+
         <div class="item">
-            <img alt="Second slide" src="../../App_Data/page2.png" >
+            <img src="@Url.Action("GetCarouselImage", new {imagePath = "Carousel/page2.png"})" style="width: 1920px; height: 500px;" />
             <div class="carousel-caption">
                 <h3>Caption heading 2</h3>
             </div>
         </div>
+
         <div class="item">
-            <img alt="Third slide" src="../../App_Data/page3.png" >
+            <img src="@Url.Action("GetCarouselImage", new {imagePath = "Carousel/page3.png"})" style="width: 1920px; height: 500px;" />
             <div class="carousel-caption">
                 <h3>Caption heading 3</h3>
             </div>
@@ -40,10 +42,12 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
         <div class="col-lg-4">
-            <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+            <img class="img-circle" data-src="@Url.Action("GetCarouselImage", new {id=1})" style="width:140px;height:140px;" />
             <h2>Heading</h2>
             <p>Lot description</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <p>
+                <a class="btn btn-default" href="#" role="button">View details &raquo;</a>
+            </p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
             <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
