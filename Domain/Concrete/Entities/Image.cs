@@ -14,6 +14,8 @@ namespace Domain.Entities
 
         public byte[] CompressedData { get; set; }
 
+        public string Title { get; set; }
+
         public string MimeType { get; set; }
     }
 }

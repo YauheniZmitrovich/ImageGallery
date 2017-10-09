@@ -16,6 +16,8 @@
     <div class="row">
         <button type="submit" class="btn btn-success text-center" style="margin-left: 2%">Save</button>
     </div>
-    <hr />
-    <h5 class="text-center">If you have any problems with your upload, try using a smaller picture.</h5>
+
+    <div class="col-md-offset-4">
+        @Html.TextArea("Title", new { rows = 3, @class = "form-control", placeholder = "Title", style = "margin-top: 2%; max-width: 313px; align: center" })
+    </div>
 }
