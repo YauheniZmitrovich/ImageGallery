@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <ul class="pager">
+    @*<ul class="pager">
         @for (int i = 1; i <= Model.PagingInfo.TotalPages; i++)
         {
             <li class="btn-block">
@@ -39,9 +39,9 @@
            })
             </li>
         }
-    </ul>
+    </ul>*@
 
-    @*<div class="btn-group col-md-offset-10 col-lg-offset-10 col-sm-offset-4 col-xs-offset-4">
+    <div class="btn-group col-md-offset-10 col-lg-offset-10 col-sm-offset-4 col-xs-offset-4">
             @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
-        </div>*@
+        </div>
 </div>
