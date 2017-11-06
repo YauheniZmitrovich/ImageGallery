@@ -6,10 +6,4 @@
 
 @Html.Partial("_Carousel")
 
-@Html.Partial("List",Model)
-
-<div class="btn-group pull-right">
-    @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index",
-        new { page = x }))
-</div>
-
+@Html.Partial("List", Model)

@@ -3,13 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>@ViewBag.Title TastyPrice</title>
+    
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/lightbox")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("Scripts", required: false)
+
 
 </head>
 <body>
@@ -30,6 +33,11 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_UploadModal");
+
+                @*else
+                    {
+                        <button type="submit" class="pull-right btn btn-success" onclick="location.href='@Url.Action("Upload", "Home")'" style="margin-top :9px">Upload</button>
+                    }*@
             </div>
         </div>
     </div>
@@ -40,11 +48,5 @@
             <p align="center">&copy; @DateTime.Now.Year - Zmitrovich Evgeny </p>
         </footer>
     </div>
-
-
-
-
-
-    @RenderSection("scripts", required: false)
 </body>
 </html>

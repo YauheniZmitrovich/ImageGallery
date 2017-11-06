@@ -11,6 +11,7 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
 - attribution requires leaving author name, author link, and the license info intact
 */
 
+jQuery.noConflict();
 
 (function() {
   var $, Lightbox, LightboxOptions;

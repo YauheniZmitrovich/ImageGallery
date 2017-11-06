@@ -17,15 +17,23 @@ namespace ImageGallery.Controllers
 
         public HomeController(IImageRepository repository)
         {
+            //TempData["IsAjaxRequest"] = Request.IsAjaxRequest();
             _repository = repository;
         }
 
-        public ActionResult Index() => View(InitializeImageHomeViewModel(1));
+        public ActionResult Index(int page = 1)
+        {
+            //TempData["IsAjaxRequest"] = Request.IsAjaxRequest();
+            return View(InitializeImageHomeViewModel(page));
+        }
 
-        public ViewResult List(int page = 1)=>View(InitializeImageHomeViewModel(page));
-        
+        public ViewResult List(int page = 1)
+        {
+            TempData["IsAjaxRequest"] = Request.IsAjaxRequest();
+            return View(InitializeImageHomeViewModel(page));
+        }//TODO:refactor
 
-        private ImageHomeViewModel InitializeImageHomeViewModel(int page=1)
+        private ImageHomeViewModel InitializeImageHomeViewModel(int page = 1)
         {
             int PageSize = 6;
             return new ImageHomeViewModel
